@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div id="login-heading">Login</div>
+
+        <div id="login-meta-text">Enter your details to login</div>
+        
+        <form action="/login" id="login-form" method="POST">
+            <div class="form-field ">    
+                {% if username_not_found == 1 %}
+                    <label for="user-username">Username</label>
+                    <input placeholder="Username not found!" type="text" class="username-not-found" id="user-username" name="user-username" required>
+                {% else %}
+                    <label for="user-username">Username</label>
+                    <input type="text" id="user-username" name="user-username" required>
+                {% endif %}
+            </div>
+
+            <div class="form-field">    
+                {% if incorrect_password == 1 %}
+                    <label for="user-password">Password</label>
+                    <input placeholder="Incorrect password!" type="password" class="incorrect-password" id="user-password" name="user-password" required>
+                {% else %}
+                    <label for="user-password">Password</label>
+                    <input type="password" id="user-password" name="user-password" required>
+                {% endif %}
+            </div>
+
+            <div class="form-field" id="login-button-container">    
+                <label for="login-button" id="login-button-label">
+                    Login
+                    <input type="submit" id="login-button">
+                </label>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

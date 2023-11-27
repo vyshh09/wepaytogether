@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Splitbill</title>
+		<link rel="stylesheet" href="../static/add_friend.css" />
+		<link rel="icon" type="image/x-icon" href="./photos/disc.png" style="border-radius: 50%;">
+		<link
+		  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+		  rel="stylesheet"
+		/>
+	  </head>
+	  <body class="back" style="background-image: url('./photos/asbg2.jpg'); background-size: cover; background-position: center 90px;  background-attachment: fixed;">
+
+		<header style="display: flex; align-items: center;">
+			<!-- <img src="./photos/disc2.png" alt="MeloDisc" width="60" height="60" style="border-radius: 50%; display: inline-block; animation: rotate 5s infinite linear;margin-right: 10px;"> -->
+
+			<h1 style="display: inline-block;font-family: 'Brush Script MT', cursive;">SplitBill</h1>
+			<pre>    </pre>                          
+			<div class="container">
+			  <h1 style="text-align: center; display: inline-block;">Create Group</h1>
+			</div>
+			<div class="navigation">
+			  <nav>
+				<h2 style="display: inline-block;"><a href="about.html">About</a></h2>
+				<h2 style="display: inline-block;"><a href="{{url_for('homePage')}}">Log Out</a></h2>
+			  </nav>
+			</div>
+		</header>
+		  
+        <br>
+        <br>
+        <br>
+
+        <div class="container2">
+            
+            <div class="reviews">
+              <div class="rev_inp">
+              <!-- <br> -->
+              <h1><u>Group Details</u></h2><br><br>
+              <form action="/create_group_dump" method="POST">
+                <label for="gname">Group Name:</label>
+                <input type="text" id="gname" name="gname" required><br><br>
+                <label for="uid" style="display: none;"></label>
+                <input type="hidden" id="uid" name="uid" value="{{user['uid']}}">
+                <div class="add_field">    
+                    <label for="submit-button" id="submit-button-label">
+                        <input type="submit" id="submit-button">
+                    </label>
+                </div>
+              </form>
+              <br><br>
+            </div>
+              <br>
+              <br>
+              <table id="reviews-table">
+                <thead>
+                  <tr>
+                    <th>Friends</th>
+                    <th>User Name</th>
+                    <th>Add To Group</th>
+                  </tr>
+                 
+                </thead>
+                <!-- <tbody id="reviews-body"> -->
+                <tbody id="{{user['uid']}}">
+                <!-- <tr>
+                    <td>Sujal</td>
+                    <td>suujal_k</td>
+                    <td align="center"><button id="0103" type="button" class="add_button">
+                        <span class="button__text"><pre>  Add</pre></span>
+                        <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                    </button></td>
+                  </tr> -->
+
+                  {% for friend in friends %}
+                  <tr  id="{{gid}}">
+                    <td>{{friend["name"]}}</td>
+                    <td>{{friend["uname"]}}</td>
+                    <td align="center"><button id="{{friend['uid']}}" type="button" class="add_button">
+                        <span class="button__text"><pre>  Add</pre></span>
+                        <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                    </button></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+    <footer>
+		<div class="container">
+			<h4 style="margin-bottom: 4px;">Split The Bill, Not The Friendship</h4>
+			<h4 style="margin-bottom: 6px;"><a href="about.html">About Us</a></h4>
+			<h4>&copy; SplitBill</h4>
+		</div>
+		</footer>
+		<script src="{{ url_for('static', filename='create_group.js') }}"></script>
+	</body>
+	</html>

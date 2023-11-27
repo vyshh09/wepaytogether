@@ -1,0 +1,97 @@
+body{
+    background-color: #ff7f7fe8;
+}
+
+.login-container{
+    background-color: rgba(255, 255, 255, 1);
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#login-heading {
+    font-size: 40px;
+    margin: 10px auto 20px auto;
+    text-align: center;
+    color: black;
+}
+
+#login-meta-text{
+    font-size: 25px;
+    text-align: center;
+    color:rgb(41, 41, 41);
+}
+
+#login-form{
+    display: flex; 
+    flex-direction: column;
+    /* border: 1px solid grey; */
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+    width: 85%;
+    align-self: center;
+}
+
+#login-form label{
+    font-size: 20px;
+    display: block;
+    padding-bottom: 4px;
+}
+
+
+#login-form input{
+    outline: none;
+    height: 40px;
+    font-size: 18px;
+}
+
+#login-button-container{
+    background-color: white;
+    border-radius: 5px;
+}
+
+#login-button-container:hover{
+    background-color: #26ff00;
+}
+
+#login-button-label{
+    align-self: center;
+}
+
+#login-button-label #login-button{
+    height: 0px;
+    width: 0px;
+    padding:0;
+    border:0;
+    margin: 0;
+}
+
+.username-not-found{
+    border: 1px solid rgb(255, 57, 57);
+
+}
+
+.username-not-found :focus{
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+
+.incorrect-password{
+    border: 1px solid rgb(255, 57, 57);
+
+}
+
+.incorrect-password :focus{
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}

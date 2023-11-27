@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Splitbill</title>
+		<link rel="stylesheet" href="../static/add_friend.css" />
+		<link rel="icon" type="image/x-icon" href="./photos/disc.png" style="border-radius: 50%;">
+		<link
+		  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+		  rel="stylesheet"
+		/>
+	  </head>
+	  <body class="back" style="background-image: url('./photos/asbg2.jpg'); background-size: cover; background-position: center 90px;  background-attachment: fixed;">
+
+		<header style="display: flex; align-items: center;">
+			<!-- <img src="./photos/disc2.png" alt="MeloDisc" width="60" height="60" style="border-radius: 50%; display: inline-block; animation: rotate 5s infinite linear;margin-right: 10px;"> -->
+
+			<h1 style="display: inline-block;font-family: 'Brush Script MT', cursive;">SplitBill</h1>
+			<pre>    </pre>                          
+			<div class="container">
+			  <h1 style="text-align: center; display: inline-block;">Group Transactions</h1>
+			</div>
+			<div class="navigation">
+			  <nav>
+				<h2 style="display: inline-block;"><a href="about.html">About</a></h2>
+				<h2 style="display: inline-block;"><a href="home.html">Log Out</a></h2>
+			  </nav>
+			</div>
+		</header>
+		  
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+            <h1 align="center" style="font-family:fantasy; font-size:70px; color:rgb(229, 206, 206)"><u>{{group['group_name']}}</u>
+            </h1>
+            <br>
+            <h1 align="center" style="font-family:fantasy; font-size:70px; color:rgb(229, 206, 206)"><u>{{transactions['description']}}</u>
+        </div>
+
+        <div class="container2">
+              <br>
+              <br>
+              <table id="reviews-table">
+                <thead>
+                  <tr>
+                    <th>Lender</th>
+                    <th>Borrower</th>
+                    <th>Amount</th>
+                  </tr>
+                 
+                </thead>
+                <tbody id="reviews-body">
+                </tbody id="{{user['uid']}}">
+
+                  {% for transaction in transactions %}
+                  <tr align="center" id="{{gid}}">
+                    <td>{{transaction['lender_name']}}</td>
+                    <td>{{transaction['borrower_name']}}</td>
+                    <td>{{transaction['amount']}}</td>
+                  </tr>
+                  {% endfor %}
+              </table>
+            </div>
+          </div>
+
+    <footer>
+		<div class="container">
+			<h4 style="margin-bottom: 4px;">Split The Bill, Not The Friendship</h4>
+			<h4 style="margin-bottom: 6px;"><a href="about.html">About Us</a></h4>
+			<h4>&copy; SplitBill</h4>
+		</div>
+		</footer>
+		<script src="{{ url_for('static', filename='create_group.js') }}"></script>
+    <script src="{{ url_for('static', filename='group_transaction.js') }}"></script>
+	</body>
+	</html>

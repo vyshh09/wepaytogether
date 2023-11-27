@@ -1,0 +1,90 @@
+body{
+    background-color: #ff7f7fe8;
+}
+
+.signup-container{
+    background-color: rgba(255, 255, 255, 1);
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#signup-heading {
+    font-size: 40px;
+    margin: 10px auto 20px auto;
+    text-align: center;
+    color: black;
+}
+
+#signup-meta-text{
+    font-size: 25px;
+    text-align: center;
+    color:rgb(41, 41, 41);
+}
+
+#signup-form{
+    display: flex; 
+    flex-direction: column;
+    /* border: 1px solid grey; */
+}
+
+#signup-form label{
+    font-size: 20px;
+    display: block;
+    padding-bottom: 4px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+    width: 85%;
+    align-self: center;
+}
+
+.form-field #user-currency-dropdown{
+    height: 40px;
+    font-size: 18px;
+
+
+}
+
+.form-field #user-currency-dropdown{
+    padding: 5px 2px 5px 0px;
+}
+
+#signup-form input{
+    outline: none;
+    height: 40px;
+    font-size: 18px;
+}
+
+.user-mobile-container{
+    display: grid;
+    width: 85%;
+    align-self: center;
+    grid-template-columns: 15% 81%;
+    column-gap: 4%;
+    margin-bottom: 13px;
+}
+
+.user-mobile-container #label-country-code{
+    grid-area: 1/1/2/2;
+}
+
+.user-mobile-container #label-mobile-number{
+    grid-area: 1/2/2/3;
+}
+
+.user-mobile-container #user-mobile-country-code{
+    grid-area: 2/1/3/2;
+}
+
+.user-mobile-container #user-mobile-number{
+    grid-area: 2/2/3/3;
+}
+
+
+
+
